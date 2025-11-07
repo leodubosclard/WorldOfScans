@@ -11,7 +11,7 @@ interface Mangas {
 
 export class AnimeSamaEngine implements Engine {
   private readonly pageBaseUrl: string =
-    "https://anime-sama.fr/s2/scans/$MANGA/$CHAPTER/$PAGE_NUMBER.jpg";
+    "https://anime-sama.org/s2/scans/$MANGA/$CHAPTER/$PAGE_NUMBER.jpg";
   private readonly coverBaseUrl: string =
     "https://cdn.statically.io/gh/Anime-Sama/IMG/img/contenu/$MANGA.jpg";
 
