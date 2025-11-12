@@ -31,7 +31,7 @@ const router = createBrowserRouter([
     },
     {
         path: '/test',
-        element: <Image h="100%" src="https://anime-sama.fr/s2/scans/One%20Piece/1142/1.jpg" />
+        element: <Image h="100%" src="https://anime-sama.org/s2/scans/One%20Piece/1142/1.jpg" />
     }
 ]);
 
