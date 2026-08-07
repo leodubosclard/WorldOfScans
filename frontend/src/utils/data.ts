@@ -27,10 +27,8 @@ export class Data {
   private constructor() {
     this.syncId();
 
-    this.api = axios.create({
-      //   baseURL: "http://localhost:3000",
-      baseURL: `https://wos-backend.vercel.app`,
-    });
+    // Même origine que le front, routé vers le backend par Traefik (proxy Vite en dev).
+    this.api = axios.create({ baseURL: "/api" });
   }
 
   static get instance(): Data {
@@ -61,8 +59,10 @@ export class Data {
   async sync() {
     this.syncId();
 
-    const res = await this.api.get(`/entity/${this.id}`);
-    if (res.status !== 200) {
+    // Hors ligne, on garde l'état courant : sans ce catch, index.tsx attend une promesse
+    // rejetée et l'app ne rend jamais (elle reste bloquée sur le splash).
+    const res = await this.api.get(`/entity/${this.id}`).catch(() => null);
+    if (!res || res.status !== 200) {
       return;
     }
 

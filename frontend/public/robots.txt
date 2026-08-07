@@ -2,4 +2,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://worldscans.vercel.com/sitemap.xml
+Sitemap: https://wos.leodubosclard.com/sitemap.xml

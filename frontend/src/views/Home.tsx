@@ -1,4 +1,3 @@
-import { Analytics } from "@vercel/analytics/react";
 import { AppLayout } from "../components/AppLayout";
 import { Navbar } from "../components/Navbar";
 import { IoSettingsOutline, IoCalendarClearOutline, IoAppsOutline, IoHeartOutline, IoCalendarClear, IoApps, IoHeart, IoSettings } from "react-icons/io5";
@@ -48,7 +47,6 @@ export const App = () => {
 
     return (
         <>
-            <Analytics />
             <AppLayout>
                 <Flex flexDir="column" minH="100vh" h="100%" overflowY="hidden">
                     <V2HomeTopbar name={section === 0 ? consts.APP_NAME : navbarItems[section].name} />

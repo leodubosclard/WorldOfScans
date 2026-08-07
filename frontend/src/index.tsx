@@ -2,7 +2,7 @@ import { Box, ChakraProvider, theme } from "@chakra-ui/react";
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
 import { Router } from "./Router";
-import * as serviceWorker from './serviceWorker';
+import { registerSW } from "virtual:pwa-register";
 import { PWA } from "./components/PWA";
 import ReactPWAInstallProvider from './libs/pwa';
 import { EngineContext } from "./libs/engine/EngineContext";
@@ -32,4 +32,4 @@ root.render(
     </ChakraProvider>
 );
 
-serviceWorker.register();
+registerSW({ immediate: true });

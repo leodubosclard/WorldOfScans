@@ -1,9 +1,9 @@
 import { Button, HStack, Text, VStack } from "@chakra-ui/react";
-import { cloneElement, useEffect, useRef } from "react";
+import { cloneElement, useEffect, useRef, type ReactElement } from "react";
 
 interface NavbarItem {
     name: string;
-    icon: JSX.Element;
+    icon: ReactElement<{ size?: number }>;
     textColor: string;
     action: () => void;
 }
