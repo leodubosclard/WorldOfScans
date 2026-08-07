@@ -2,7 +2,7 @@ import { AspectRatio, Image, Stack, Tab, TabList, TabPanel, TabPanels, Tabs } fr
 import { useEffect, useState } from "react";
 import utils from "../../utils/utils";
 import { ScansGrid } from "../../components/ScansGrid";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 import { useTranslation } from "react-i18next";
 import { Data } from "../../utils/data";
 

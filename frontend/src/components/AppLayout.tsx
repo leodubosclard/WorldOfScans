@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { type ReactElement } from 'react';
 import { Box } from '@chakra-ui/react';
 
 interface AppLayoutProps {
-    children: JSX.Element;
+    children: ReactElement;
 }
 
 export const AppLayout = ({ children }: AppLayoutProps) => (

@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Entity } from '@prisma/client';
+import { Entity } from '../generated/prisma/client';
 import { PrismaService } from '../prisma/prisma.service';
 import { ReadDto } from './dto/read.dto';
 

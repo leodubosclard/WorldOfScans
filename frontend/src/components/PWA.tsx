@@ -20,7 +20,7 @@ export const PWA = () => {
                 logo: Logo,
             }).then(() => {}).catch(() => {});
         }
-    });
+    }, [pwaInstall, supported, isInstalled, t]);
 
     return (
         <></>

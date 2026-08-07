@@ -1,0 +1,27 @@
+# À utiliser quand un Traefik tourne déjà ailleurs sur le serveur.
+# Deux Traefik ne peuvent pas se partager les ports 80/443.
+#
+#   docker compose -f docker-compose.yml -f docker-compose.external-traefik.yml up -d --build
+#
+# Renseigne TRAEFIK_NETWORK (+ TRAEFIK_ENTRYPOINT / TRAEFIK_CERTRESOLVER si ton
+# Traefik ne les nomme pas comme celui d'ici) dans le .env.
+services:
+  traefik:
+    # Un profil non activé = le service n'est jamais démarré.
+    profiles: ["embedded-traefik-disabled"]
+
+  frontend:
+    networks: [default, proxy]
+    labels:
+      # Les conteneurs sont sur deux réseaux : sans ça Traefik peut viser la mauvaise IP.
+      - traefik.docker.network=${TRAEFIK_NETWORK:-proxy}
+
+  backend:
+    networks: [default, proxy]
+    labels:
+      - traefik.docker.network=${TRAEFIK_NETWORK:-proxy}
+
+networks:
+  proxy:
+    external: true
+    name: ${TRAEFIK_NETWORK:-proxy}

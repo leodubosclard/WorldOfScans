@@ -1,5 +1,5 @@
 import { Box, Text, Image as CImage, HStack, VStack, IconButton, Button, SimpleGrid, Spinner, List, Divider } from '@chakra-ui/react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router';
 import { EngineContext } from '../libs/engine/EngineContext';
 import { useEffect, useMemo, useState } from 'react';
 import utils from '../utils/utils';
