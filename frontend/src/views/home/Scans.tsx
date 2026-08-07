@@ -3,7 +3,7 @@ import { IconButton, Input, InputGroup, InputLeftElement, InputRightElement, Sta
 import { useEffect, useMemo, useState } from "react";
 import debounce from 'lodash.debounce';
 import { ScansGrid } from "../../components/ScansGrid";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 import consts from "../../utils/consts";
 import { useTranslation } from "react-i18next";
 

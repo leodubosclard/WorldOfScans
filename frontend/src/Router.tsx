@@ -1,7 +1,7 @@
 import {
     createBrowserRouter,
     RouterProvider,
-} from "react-router-dom";
+} from "react-router";
 import { App } from "./views/Home";
 import { Manga } from "./views/Manga";
 import { Reader } from "./views/Reader";

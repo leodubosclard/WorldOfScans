@@ -1,6 +1,6 @@
 // import { Box, HStack, IconButton, Text, VStack, Image as CImage } from "@chakra-ui/react"
 // import { useEffect, useMemo, useState } from "react";
-// import { useNavigate, useParams } from "react-router-dom";
+// import { useNavigate, useParams } from "react-router";
 // import { EngineContext } from "../libs/engine/EngineContext";
 // import utils from "../utils/utils";
 // import { IoArrowBack, IoArrowForward } from "react-icons/io5";
@@ -78,7 +78,7 @@
 
 import { Box, HStack, IconButton, Text, VStack, Image as CImage } from "@chakra-ui/react";
 import { useEffect, useMemo, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router";
 import { EngineContext } from "../libs/engine/EngineContext";
 import utils from "../utils/utils";
 import { IoArrowBack, IoArrowForward } from "react-icons/io5";
