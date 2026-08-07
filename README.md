@@ -17,6 +17,22 @@ Point your `DOMAIN`'s A record at the server. Traefik requests the Let's Encrypt
 certificate on first boot, serves the frontend on `/` and the backend on `/api`.
 Database migrations run automatically when the backend container starts.
 
+### Already running Traefik on this server?
+
+Two Traefik instances cannot share ports 80/443. Use the override, which disables
+the bundled one and attaches the containers to your existing proxy network:
+
+```sh
+docker compose -f docker-compose.yml -f docker-compose.external-traefik.yml up -d --build
+```
+
+Set `TRAEFIK_NETWORK` in `.env`, plus `TRAEFIK_ENTRYPOINT` and `TRAEFIK_CERTRESOLVER`
+if your Traefik does not name them `websecure` and `le`.
+
+> These names must match your Traefik exactly. Given an unknown `certResolver`,
+> Traefik does not fail — it quietly serves its self-signed certificate. The symptom
+> is a browser warning and a service worker that refuses to register.
+
 ## 💻 Local development
 
 ```sh

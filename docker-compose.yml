@@ -25,8 +25,8 @@ services:
     labels:
       - traefik.enable=true
       - traefik.http.routers.wos-front.rule=Host(`${DOMAIN}`)
-      - traefik.http.routers.wos-front.entryPoints=websecure
-      - traefik.http.routers.wos-front.tls.certResolver=le
+      - traefik.http.routers.wos-front.entryPoints=${TRAEFIK_ENTRYPOINT:-websecure}
+      - traefik.http.routers.wos-front.tls.certResolver=${TRAEFIK_CERTRESOLVER:-le}
       - traefik.http.services.wos-front.loadbalancer.server.port=80
 
   backend:
@@ -41,8 +41,8 @@ services:
       - traefik.enable=true
       # Le préfixe /api est porté par Nest (setGlobalPrefix) : pas de stripprefix.
       - traefik.http.routers.wos-api.rule=Host(`${DOMAIN}`) && PathPrefix(`/api`)
-      - traefik.http.routers.wos-api.entryPoints=websecure
-      - traefik.http.routers.wos-api.tls.certResolver=le
+      - traefik.http.routers.wos-api.entryPoints=${TRAEFIK_ENTRYPOINT:-websecure}
+      - traefik.http.routers.wos-api.tls.certResolver=${TRAEFIK_CERTRESOLVER:-le}
       - traefik.http.services.wos-api.loadbalancer.server.port=3000
 
   postgres:
